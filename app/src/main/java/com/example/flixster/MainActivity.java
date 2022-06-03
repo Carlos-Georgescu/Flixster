@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.bumptech.glide.Glide;
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.example.flixster.adapters.MovieAdapter;
@@ -16,6 +17,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import okhttp3.Headers;
@@ -24,14 +26,14 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String NOW_PLAYING_URL = "https://api.themoviedb.org/3/movie/now_playing?api_key=66f2023e4c1f7ac262b906c23d0ebe8b";
     public static final String TAG = "MainActivity";
-    List<Movie> movies;
+    List<Movie> movies = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         RecyclerView rvMovies = findViewById(R.id.rvMovies);
         // Create the adapter
-        MovieAdapter movieAdapter = new MovieAdapter(this,movies);
+        MovieAdapter movieAdapter = new MovieAdapter(this, movies);
 
         // set adapter on the receycleview
         rvMovies.setAdapter(movieAdapter);
@@ -55,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 } catch (JSONException e) {
                     Log.e(TAG, "Hit Json exception", e);
                 }
+
             }
 
             @Override
