@@ -9,6 +9,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.example.flixster.models.Movie;
 
 import org.parceler.Parcels;
@@ -50,10 +51,11 @@ public class MovieDetailsActivity extends AppCompatActivity {
         rbVoteAverage.setMinimumWidth(200);
         rbVoteAverage.setNumStars((int) (movie.getVoteAverage() / 2));
 
-
+        int radius = 100; // corner radius, higher value = more rounded
         Glide.with(this)
                 .load(movie.getBackdropPath())
                 .placeholder(R.drawable.flicks_backdrop_placeholder)
+                .transform(new RoundedCorners(radius))
                 .into(ratingPicture);
     }
 }

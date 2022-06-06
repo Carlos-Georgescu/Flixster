@@ -44,6 +44,7 @@ dependencies {
     implementation 'org.parceler:parceler-api:1.1.12'
     annotationProcessor 'org.parceler:parceler:1.1.12'
 
+    
     //compile 'org.parceler:parceler-api:1.1.6'
     //apt 'org.parceler:parceler:1.1.6'
 
