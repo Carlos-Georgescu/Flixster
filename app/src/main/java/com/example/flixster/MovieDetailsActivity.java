@@ -35,6 +35,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
         // unwrap the movie passed in via intent, using its simple name as a key
         movie = (Movie) Parcels.unwrap(getIntent().getParcelableExtra(Movie.class.getSimpleName()));
+        //System.out.println(movie.getOverview());
         Log.d("MovieDetailsActivity", String.format("Showing details for '%s'", movie.getTitle()));
 
 
@@ -47,7 +48,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
        // float voteAverage = movie.getVoteAverage().floatValue;
        // System.out.println(voteAverage);
         rbVoteAverage.setMinimumWidth(200);
-        rbVoteAverage.setNumStars(2);
+        rbVoteAverage.setNumStars((int) (movie.getVoteAverage() / 2));
 
 
         Glide.with(this)

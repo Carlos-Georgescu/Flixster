@@ -26,6 +26,7 @@ public class Movie {
         overview = movie.getString("overview");
         posterPath = movie.getString("poster_path");
         backdropPath = movie.getString("backdrop_path");
+        voteAverage = movie.getInt("vote_average");
     }
 
     public double getVoteAverage() {
