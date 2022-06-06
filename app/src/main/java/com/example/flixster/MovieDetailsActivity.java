@@ -54,7 +54,8 @@ public class MovieDetailsActivity extends AppCompatActivity {
        // float voteAverage = movie.getVoteAverage().floatValue;
        // System.out.println(voteAverage);
         rbVoteAverage.setMinimumWidth(200);
-        rbVoteAverage.setNumStars((int) (movie.getVoteAverage() / 2));
+        System.out.println(movie.getVoteAverage());
+        rbVoteAverage.setNumStars((int) (Math.round(movie.getVoteAverage() / 2)));
 
         int radius = 100; // corner radius, higher value = more rounded
         Glide.with(this)
