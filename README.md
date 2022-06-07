@@ -28,7 +28,8 @@ X - I added a back button into the app
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented user stories:
+Here's a walkthrough of implemented user stories: https://youtube.com/shorts/XtNHVxwumjc?feature=share
+
 
 
 ## Notes
